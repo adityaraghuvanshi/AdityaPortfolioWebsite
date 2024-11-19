@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aditya Raghuvanshi - Full Stack Developer Portfolio</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap");
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Roboto", sans-serif;
+                line-height: 1.6;
+                color: #e6f1ff;
+                background-color: #030b1c;
+                overflow-x: hidden;
+            }
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #030b1c;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #64ffda;
+                border-radius: 5px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #45c3a8;
+            }
+            .skill-circles-container {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .skill-circles-wrapper {
+                position: relative;
+            }
+            .central-circle {
+                width: 12rem;
+                height: 12rem;
+                border-radius: 50%;
+                background-color: #64ffda;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #030b1c;
+                font-size: 1.5rem;
+                font-weight: bold;
+                z-index: 10;
+                position: relative;
+            }
+            .skill-circle {
+                position: absolute;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas
+            id="bg"
+            style="position: fixed; top: 0; left: 0; z-index: -1"
+        ></canvas>
+
+        <header
+            style="
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: rgba(3, 11, 28, 0.8);
+                padding: 1rem;
+                z-index: 1000;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+            "
+        >
+            <nav
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                "
+            >
+                <a
+                    href="#"
+                    style="
+                        color: #64ffda;
+                        text-decoration: none;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        font-family: 'Space Mono', monospace;
+                        transition: color 0.3s ease;
+                    "
+                    >AR.</a
+                >
+                <ul style="list-style: none; display: flex; gap: 2rem">
+                    <li>
+                        <a
+                            href="#home"
+                            style="
+                                color: #e6f1ff;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                transition: color 0.3s ease;
+                                font-family: 'Space Mono', monospace;
+                            "
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#about"
+                            style="
+                                color: #e6f1ff;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                transition: color 0.3s ease;
+                                font-family: 'Space Mono', monospace;
+                            "
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#skills"
+                            style="
+                                color: #e6f1ff;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                transition: color 0.3s ease;
+                                font-family: 'Space Mono', monospace;
+                            "
+                            >Skills</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#portfolio"
+                            style="
+                                color: #e6f1ff;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                transition: color 0.3s ease;
+                                font-family: 'Space Mono', monospace;
+                            "
+                            >Portfolio</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            style="
+                                color: #e6f1ff;
+                                text-decoration: none;
+                                font-size: 1rem;
+                                transition: color 0.3s ease;
+                                font-family: 'Space Mono', monospace;
+                            "
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section
+                id="home"
+                style="
+                    height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 0 10%;
+                    position: relative;
+                "
+            >
+                <h1
+                    style="
+                        font-size: 4rem;
+                        margin-bottom: 1rem;
+                        color: #e6f1ff;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease, transform 0.5s ease;
+                        font-family: 'Space Mono', monospace;
+                        text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+                    "
+                >
+                    Aditya Raghuvanshi
+                </h1>
+                <h2
+                    style="
+                        font-size: 2rem;
+                        color: #64ffda;
+                        margin-bottom: 1rem;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease 0.2s,
+                            transform 0.5s ease 0.2s;
+                        font-family: 'Space Mono', monospace;
+                    "
+                >
+                    I'm a <span class="typed-text"></span>
+                </h2>
+                <p
+                    style="
+                        max-width: 600px;
+                        margin-bottom: 2rem;
+                        color: #8892b0;
+                        font-size: 1.1rem;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease 0.4s,
+                            transform 0.5s ease 0.4s;
+                    "
+                >
+                    Passionate about creating efficient, user-friendly web
+                    applications with over 1 year of experience in frontend and
+                    backend development.
+                </p>
+                <div
+                    style="
+                        display: flex;
+                        gap: 1rem;
+                        margin-bottom: 2rem;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease 0.6s,
+                            transform 0.5s ease 0.6s;
+                    "
+                >
+                    <a
+                        href="#"
+                        style="
+                            display: inline-block;
+                            background-color: transparent;
+                            border: 1px solid #64ffda;
+                            color: #64ffda;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 4px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            font-family: 'Space Mono', monospace;
+                        "
+                        >Download CV</a
+                    >
+                    <a
+                        href="#contact"
+                        style="
+                            display: inline-block;
+                            background-color: #64ffda;
+                            color: #030b1c;
+                            padding: 0.75rem 1.5rem;
+                            border-radius: 4px;
+                            text-decoration: none;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            font-family: 'Space Mono', monospace;
+                        "
+                        >Get in Touch</a
+                    >
+                </div>
+            </section>
+
+            <section
+                id="about"
+                style="
+                    min-height: 100vh;
+                    padding: 6rem 10%;
+                    background-color: rgba(3, 11, 28, 0.8);
+                    backdrop-filter: blur(10px);
+                "
+            >
+                <h2
+                    style="
+                        font-size: 2.5rem;
+                        margin-bottom: 2rem;
+                        color: #64ffda;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease, transform 0.5s ease;
+                        font-family: 'Space Mono', monospace;
+                    "
+                >
+                    About Me
+                </h2>
+                <div style="display: flex; gap: 4rem; align-items: center">
+                    <div
+                        style="
+                            flex: 1;
+                            opacity: 0;
+                            transform: translateX(-20px);
+                            transition: opacity 0.5s ease, transform 0.5s ease;
+                        "
+                    >
+                        <p
+                            style="
+                                font-size: 1.1rem;
+                                color: #8892b0;
+                                margin-bottom: 1rem;
+                            "
+                        >
+                            Hello! I'm Aditya, a passionate Full Stack Developer
+                            based in Mumbai, India. With a Master's in Physics
+                            and a Post Graduate Diploma in Advanced Computing
+                            (PG-DAC), I bring a unique blend of analytical
+                            thinking and technical expertise to my work.
+                        </p>
+                        <p
+                            style="
+                                font-size: 1.1rem;
+                                color: #8892b0;
+                                margin-bottom: 1rem;
+                            "
+                        >
+                            My journey in web development started during my
+                            studies, and I've been hooked ever since. I love the
+                            challenge of solving complex problems and turning
+                            ideas into reality through code.
+                        </p>
+                        <p style="font-size: 1.1rem; color: #8892b0">
+                            When I'm not coding, you can find me exploring new
+                            technologies, contributing to open-source projects,
+                            or enjoying a good book on science and technology.
+                        </p>
+                    </div>
+                    <div
+                        style="
+                            flex: 1;
+                            opacity: 0;
+                            transform: translateX(20px);
+                            transition: opacity 0.5s ease, transform 0.5s ease;
+                        "
+                    >
+                        <img
+                            src="/placeholder.svg?height=400&width=400"
+                            alt="Aditya Raghuvanshi"
+                            style="
+                                width: 100%;
+                                max-width: 400px;
+                                border-radius: 4px;
+                                box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+                            "
+                        />
+                    </div>
+                </div>
+            </section>
+            <section id="skills" class="skill-circles-container">
+                <div class="skill-circles-wrapper">
+                    <div class="central-circle">My Skills</div>
+                    <!-- Skill circles will be added here dynamically -->
+                </div>
+            </section>
+            <section
+                id="portfolio"
+                style="
+                    min-height: 100vh;
+                    padding: 6rem 10%;
+                    background-color: rgba(3, 11, 28, 0.8);
+                    backdrop-filter: blur(10px);
+                "
+            >
+                <h2
+                    style="
+                        font-size: 2.5rem;
+                        margin-bottom: 2rem;
+                        color: #64ffda;
+                        text-align: center;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease, transform 0.5s ease;
+                        font-family: 'Space Mono', monospace;
+                    "
+                >
+                    My Portfolio
+                </h2>
+                <div
+                    id="portfolio-carousel"
+                    style="
+                        overflow-x: auto;
+                        white-space: nowrap;
+                        padding: 20px 0;
+                        -webkit-overflow-scrolling: touch;
+                        scroll-behavior: smooth;
+                    "
+                >
+                    <div
+                        style="
+                            display: inline-block;
+                            transition: transform 0.3s;
+                        "
+                    >
+                        <div
+                            style="
+                                width: 300px;
+                                margin-right: 20px;
+                                background-color: rgba(17, 34, 64, 0.8);
+                                border-radius: 4px;
+                                padding: 20px;
+                                display: inline-block;
+                                opacity: 0;
+                                transform: translateY(20px);
+                                transition: opacity 0.5s ease,
+                                    transform 0.5s ease;
+                                backdrop-filter: blur(5px);
+                            "
+                        >
+                            <img
+                                src="/placeholder.svg?height=150&width=260"
+                                alt="E-commerce Platform"
+                                style="
+                                    width: 100%;
+                                    height: 150px;
+                                    object-fit: cover;
+                                    border-radius: 4px;
+                                    margin-bottom: 15px;
+                                "
+                            />
+                            <h3
+                                style="
+                                    font-size: 1.2rem;
+                                    color: #e6f1ff;
+                                    margin-bottom: 10px;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                E-commerce Platform
+                            </h3>
+                            <p
+                                style="
+                                    color: #8892b0;
+                                    font-size: 0.9rem;
+                                    margin-bottom: 15px;
+                                "
+                            >
+                                A full-stack e-commerce solution with React
+                                frontend and Node.js backend.
+                            </p>
+                            <a
+                                href="#"
+                                style="
+                                    display: inline-block;
+                                    background-color: #64ffda;
+                                    color: #030b1c;
+                                    padding: 0.5rem 1rem;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    transition: all 0.3s ease;
+                                    font-size: 0.8rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                                >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            display: inline-block;
+                            transition: transform 0.3s;
+                        "
+                    >
+                        <div
+                            style="
+                                width: 300px;
+                                margin-right: 20px;
+                                background-color: rgba(17, 34, 64, 0.8);
+                                border-radius: 4px;
+                                padding: 20px;
+                                display: inline-block;
+                                opacity: 0;
+                                transform: translateY(20px);
+                                transition: opacity 0.5s ease,
+                                    transform 0.5s ease;
+                                backdrop-filter: blur(5px);
+                            "
+                        >
+                            <img
+                                src="/placeholder.svg?height=150&width=260"
+                                alt="Task Management App"
+                                style="
+                                    width: 100%;
+                                    height: 150px;
+                                    object-fit: cover;
+                                    border-radius: 4px;
+                                    margin-bottom: 15px;
+                                "
+                            />
+                            <h3
+                                style="
+                                    font-size: 1.2rem;
+                                    color: #e6f1ff;
+                                    margin-bottom: 10px;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Task Management App
+                            </h3>
+                            <p
+                                style="
+                                    color: #8892b0;
+                                    font-size: 0.9rem;
+                                    margin-bottom: 15px;
+                                "
+                            >
+                                A React Native mobile app for efficient task
+                                management and tracking.
+                            </p>
+                            <a
+                                href="#"
+                                style="
+                                    display: inline-block;
+                                    background-color: #64ffda;
+                                    color: #030b1c;
+                                    padding: 0.5rem 1rem;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    transition: all 0.3s ease;
+                                    font-size: 0.8rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                                >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            display: inline-block;
+                            transition: transform 0.3s;
+                        "
+                    >
+                        <div
+                            style="
+                                width: 300px;
+                                margin-right: 20px;
+                                background-color: rgba(17, 34, 64, 0.8);
+                                border-radius: 4px;
+                                padding: 20px;
+                                display: inline-block;
+                                opacity: 0;
+                                transform: translateY(20px);
+                                transition: opacity 0.5s ease,
+                                    transform 0.5s ease;
+                                backdrop-filter: blur(5px);
+                            "
+                        >
+                            <img
+                                src="/placeholder.svg?height=150&width=260"
+                                alt="Weather Forecast Dashboard"
+                                style="
+                                    width: 100%;
+                                    height: 150px;
+                                    object-fit: cover;
+                                    border-radius: 4px;
+                                    margin-bottom: 15px;
+                                "
+                            />
+                            <h3
+                                style="
+                                    font-size: 1.2rem;
+                                    color: #e6f1ff;
+                                    margin-bottom: 10px;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Weather Forecast Dashboard
+                            </h3>
+                            <p
+                                style="
+                                    color: #8892b0;
+                                    font-size: 0.9rem;
+                                    margin-bottom: 15px;
+                                "
+                            >
+                                A Vue.js web app providing real-time weather
+                                forecasts and maps.
+                            </p>
+                            <a
+                                href="#"
+                                style="
+                                    display: inline-block;
+                                    background-color: #64ffda;
+                                    color: #030b1c;
+                                    padding: 0.5rem 1rem;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    transition: all 0.3s ease;
+                                    font-size: 0.8rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                                >View Project</a
+                            >
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            display: inline-block;
+                            transition: transform 0.3s;
+                        "
+                    >
+                        <div
+                            style="
+                                width: 300px;
+                                margin-right: 20px;
+                                background-color: rgba(17, 34, 64, 0.8);
+                                border-radius: 4px;
+                                padding: 20px;
+                                display: inline-block;
+                                opacity: 0;
+                                transform: translateY(20px);
+                                transition: opacity 0.5s ease,
+                                    transform 0.5s ease;
+                                backdrop-filter: blur(5px);
+                            "
+                        >
+                            <img
+                                src="/placeholder.svg?height=150&width=260"
+                                alt="AI Chatbot"
+                                style="
+                                    width: 100%;
+                                    height: 150px;
+                                    object-fit: cover;
+                                    border-radius: 4px;
+                                    margin-bottom: 15px;
+                                "
+                            />
+                            <h3
+                                style="
+                                    font-size: 1.2rem;
+                                    color: #e6f1ff;
+                                    margin-bottom: 10px;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                AI Chatbot
+                            </h3>
+                            <p
+                                style="
+                                    color: #8892b0;
+                                    font-size: 0.9rem;
+                                    margin-bottom: 15px;
+                                "
+                            >
+                                An intelligent chatbot created with Python and
+                                natural language processing.
+                            </p>
+                            <a
+                                href="#"
+                                style="
+                                    display: inline-block;
+                                    background-color: #64ffda;
+                                    color: #030b1c;
+                                    padding: 0.5rem 1rem;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    transition: all 0.3s ease;
+                                    font-size: 0.8rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                                >View Project</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" style="min-height: 100vh; padding: 6rem 10%">
+                <h2
+                    style="
+                        font-size: 2.5rem;
+                        margin-bottom: 2rem;
+                        color: #64ffda;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.5s ease, transform 0.5s ease;
+                        font-family: 'Space Mono', monospace;
+                    "
+                >
+                    Get In Touch
+                </h2>
+                <div style="display: flex; gap: 4rem">
+                    <div
+                        style="
+                            flex: 1;
+                            opacity: 0;
+                            transform: translateX(-20px);
+                            transition: opacity 0.5s ease, transform 0.5s ease;
+                        "
+                    >
+                        <p
+                            style="
+                                color: #8892b0;
+                                margin-bottom: 2rem;
+                                font-size: 1.1rem;
+                            "
+                        >
+                            I'm always open to new opportunities and
+                            collaborations. Whether you have a question or just
+                            want to say hi, feel free to reach out!
+                        </p>
+                        <div style="margin-bottom: 1.5rem">
+                            <h3
+                                style="
+                                    color: #64ffda;
+                                    margin-bottom: 0.5rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Email
+                            </h3>
+                            <p style="color: #8892b0">
+                                raghuvanshiaditya2211@gmail.com
+                            </p>
+                        </div>
+                        <div style="margin-bottom: 1.5rem">
+                            <h3
+                                style="
+                                    color: #64ffda;
+                                    margin-bottom: 0.5rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Phone
+                            </h3>
+                            <p style="color: #8892b0">+91 9767975386</p>
+                        </div>
+                        <div>
+                            <h3
+                                style="
+                                    color: #64ffda;
+                                    margin-bottom: 0.5rem;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Location
+                            </h3>
+                            <p style="color: #8892b0">Mumbai, India</p>
+                        </div>
+                    </div>
+                    <div
+                        style="
+                            flex: 1;
+                            opacity: 0;
+                            transform: translateX(20px);
+                            transition: opacity 0.5s ease, transform 0.5s ease;
+                        "
+                    >
+                        <form
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                gap: 1rem;
+                            "
+                        >
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                required
+                                style="
+                                    padding: 0.75rem;
+                                    border-radius: 4px;
+                                    background-color: rgba(17, 34, 64, 0.8);
+                                    border: none;
+                                    color: #e6f1ff;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            />
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                required
+                                style="
+                                    padding: 0.75rem;
+                                    border-radius: 4px;
+                                    background-color: rgba(17, 34, 64, 0.8);
+                                    border: none;
+                                    color: #e6f1ff;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            />
+                            <textarea
+                                placeholder="Your Message"
+                                required
+                                rows="5"
+                                style="
+                                    padding: 0.75rem;
+                                    border-radius: 4px;
+                                    background-color: rgba(17, 34, 64, 0.8);
+                                    border: none;
+                                    color: #e6f1ff;
+                                    resize: vertical;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            ></textarea>
+                            <button
+                                type="submit"
+                                style="
+                                    display: inline-block;
+                                    background-color: #64ffda;
+                                    color: #030b1c;
+                                    padding: 0.75rem 1.5rem;
+                                    border-radius: 4px;
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    transition: all 0.3s ease;
+                                    align-self: flex-start;
+                                    border: none;
+                                    cursor: pointer;
+                                    font-family: 'Space Mono', monospace;
+                                "
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer
+            style="
+                background-color: rgba(1, 4, 9, 0.8);
+                color: #8892b0;
+                text-align: center;
+                padding: 2rem;
+                backdrop-filter: blur(10px);
+            "
+        >
+            <p>&copy; 2024 Aditya Raghuvanshi. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // Three.js code for animated starry background
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(
+                75,
+                window.innerWidth / window.innerHeight,
+                0.1,
+                1000
+            );
+            const renderer = new THREE.WebGLRenderer({
+                canvas: document.querySelector("#bg"),
+                alpha: true,
+            });
+
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.position.setZ(30);
+
+            // Create stars
+            const starGeometry = new THREE.BufferGeometry();
+            const starMaterial = new THREE.PointsMaterial({
+                color: 0xffffff,
+                size: 0.1,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true,
+            });
+
+            const starVertices = [];
+            for (let i = 0; i < 10000; i++) {
+                const x = (Math.random() - 0.5) * 2000;
+                const y = (Math.random() - 0.5) * 2000;
+                const z = -Math.random() * 2000;
+                starVertices.push(x, y, z);
+            }
+
+            starGeometry.setAttribute(
+                "position",
+                new THREE.Float32BufferAttribute(starVertices, 3)
+            );
+            const stars = new THREE.Points(starGeometry, starMaterial);
+            scene.add(stars);
+
+            // Add lighting
+            const ambientLight = new THREE.AmbientLight(0x404040);
+            scene.add(ambientLight);
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                stars.rotation.y += 0.0002;
+                stars.rotation.x += 0.0001;
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Handle window resize
+            window.addEventListener("resize", () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+
+            // Parallax effect for stars
+            document.addEventListener("mousemove", (event) => {
+                const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+                stars.rotation.y = mouseX * 0.1;
+                stars.rotation.x = mouseY * 0.1;
+            });
+
+            // Typed.js implementation
+            const typed = new Typed(".typed-text", {
+                strings: [
+                    "Frontend Developer",
+                    "Backend Developer",
+                    "Full Stack Developer",
+                    "Web Developer",
+                ],
+                typeSpeed: 50,
+                backSpeed: 50,
+                backDelay: 2000,
+                loop: true,
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document
+                        .querySelector(this.getAttribute("href"))
+                        .scrollIntoView({
+                            behavior: "smooth",
+                        });
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                        if (entry.target.classList.contains("skill-bar")) {
+                            entry.target.style.width =
+                                entry.target.dataset.width;
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document
+                .querySelectorAll(
+                    "h1, h2, p, a, #about div, #skills div, #portfolio-carousel > div > div, #contact div, li"
+                )
+                .forEach((el) => {
+                    observer.observe(el);
+                });
+
+            // Skill bars animation
+            document.querySelectorAll(".skill-bar").forEach((bar) => {
+                bar.style.width = "0%";
+                observer.observe(bar);
+            });
+
+            // Header shrink on scroll
+            window.addEventListener("scroll", () => {
+                const header = document.querySelector("header");
+                if (window.scrollY > 100) {
+                    header.style.padding = "0.5rem 1rem";
+                } else {
+                    header.style.padding = "1rem";
+                }
+            });
+
+            // Portfolio carousel infinite scroll
+            const carousel = document.getElementById("portfolio-carousel");
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            carousel.addEventListener("mousedown", (e) => {
+                isDown = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener("mouseleave", () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener("mouseup", () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+
+            // Clone portfolio items for infinite scroll effect
+            const portfolioItems = carousel.innerHTML;
+            carousel.innerHTML += portfolioItems;
+
+            // Scroll to middle to create illusion of infinite scroll
+            carousel.scrollLeft = carousel.scrollWidth / 4;
+            const skills = [
+                { name: "React", color: "#3b82f6" },
+                { name: "Node.js", color: "#22c55e" },
+                { name: "TypeScript", color: "#1d4ed8" },
+                { name: "Python", color: "#eab308" },
+                { name: "SQL", color: "#f97316" },
+                { name: "AWS", color: "#ca8a04" },
+                { name: "Docker", color: "#2563eb" },
+                { name: "Git", color: "#ef4444" },
+            ];
+
+            const wrapper = document.querySelector(".skill-circles-wrapper");
+            const orbitRadius = 150;
+
+            skills.forEach((skill, index) => {
+                const angle =
+                    (index / skills.length) * Math.PI * 2 - Math.PI / 2;
+                const x = Math.cos(angle) * orbitRadius;
+                const y = Math.sin(angle) * orbitRadius;
+
+                const skillCircle = document.createElement("div");
+                skillCircle.className = "skill-circle";
+                skillCircle.style.backgroundColor = skill.color;
+                skillCircle.style.transform = `translate(${x}px, ${y}px)`;
+                skillCircle.textContent = skill.name;
+
+                wrapper.appendChild(skillCircle);
+
+                // Add animation
+                skillCircle.animate(
+                    [
+                        { transform: `translate(${x}px, ${y}px) rotate(0deg)` },
+                        {
+                            transform: `translate(${x}px, ${y}px) rotate(360deg)`,
+                        },
+                    ],
+                    {
+                        duration: 20000,
+                        iterations: Infinity,
+                        easing: "linear",
+                    }
+                );
+            });
+
+            // Intersection Observer for fade-in effect
+            const skillsSection = document.getElementById("skills");
+            const skillsObserver = new IntersectionObserver(
+                (entries) => {
+                    if (entries[0].isIntersecting) {
+                        wrapper.style.opacity = "1";
+                        wrapper.style.transform = "translateY(0)";
+                        skillsObserver.unobserve(skillsSection);
+                    }
+                },
+                { threshold: 0.1 }
+            );
+
+            wrapper.style.opacity = "0";
+            wrapper.style.transform = "translateY(20px)";
+            wrapper.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+            skillsObserver.observe(skillsSection);
+
+            // Cursor trail effect
+            document.addEventListener("DOMContentLoaded", () => {
+                const body = document.body;
+                const cursorTrail = [];
+                const trailLength = 20;
+
+                // Create cursor trail elements
+                for (let i = 0; i < trailLength; i++) {
+                    const dot = document.createElement("div");
+                    dot.className = "cursor-trail";
+                    body.appendChild(dot);
+                    cursorTrail.push(dot);
+                }
+
+                // Update cursor trail positions
+                let currentX = 0;
+                let currentY = 0;
+                let raf;
+
+                const updateCursorTrail = (time) => {
+                    cursorTrail.forEach((dot, index) => {
+                        const nextDot =
+                            cursorTrail[index + 1] || cursorTrail[0];
+                        dot.style.left = `${nextDot.offsetLeft}px`;
+                        dot.style.top = `${nextDot.offsetTop}px`;
+                    });
+
+                    const lastDot = cursorTrail[trailLength - 1];
+                    lastDot.style.left = `${currentX}px`;
+                    lastDot.style.top = `${currentY}px`;
+
+                    raf = requestAnimationFrame(updateCursorTrail);
+                };
+
+                // Track mouse movement
+                document.addEventListener("mousemove", (e) => {
+                    currentX = e.clientX;
+                    currentY = e.clientY;
+                });
+
+                // Start animation
+                updateCursorTrail();
+
+                // Hide default cursor
+                body.style.cursor = "none";
+
+                // Add styles for cursor trail
+                const style = document.createElement("style");
+                style.textContent = `
+    .cursor-trail {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background-color: #64ffda;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: width 0.2s, height 0.2s, opacity 0.2s;
+    }
+    .cursor-trail:nth-child(1) { opacity: 1; }
+    .cursor-trail:nth-child(2) { opacity: 0.9; }
+    .cursor-trail:nth-child(3) { opacity: 0.8; }
+    .cursor-trail:nth-child(4) { opacity: 0.7; }
+    .cursor-trail:nth-child(5) { opacity: 0.6; }
+    .cursor-trail:nth-child(n+6) { opacity: 0.5; }
+    .cursor-trail:nth-child(n+11) { opacity: 0.4; }
+    .cursor-trail:nth-child(n+16) { opacity: 0.3; }
+  `;
+                document.head.appendChild(style);
+            });
+        </script>
+    </body>
+</html>
