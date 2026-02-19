@@ -18,26 +18,26 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@example.com",
-      href: "mailto:hello@example.com",
+      value: "raghuvanshiaditya2211@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&to=raghuvanshiaditya2211@gmail.com",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
-      href: "https://linkedin.com",
+      value: "linkedin.com/in/raghuvanshiaditya",
+      href: "https://www.linkedin.com/in/raghuvanshiaditya/",
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/yourprofile",
-      href: "https://github.com",
+      value: "github.com/adityaraghuvanshi",
+      href: "https://github.com/adityaraghuvanshi",
     },
     {
       icon: Twitter,
       label: "Twitter",
-      value: "@yourhandle",
-      href: "https://twitter.com",
+      value: "@adityaraghuv",
+      href: "https://x.com/adityaraghuv",
     },
   ];
 

@@ -4,9 +4,12 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail, Code2, Menu, X } from "lucide-react";
 
+// Toggle to show/hide Projects section
+const SHOW_PROJECTS = false;
+
 const navItems = [
   { name: "Hero", href: "#hero" },
-  { name: "Projects", href: "#projects" },
+  ...(SHOW_PROJECTS ? [{ name: "Projects", href: "#projects" }] : []),
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },

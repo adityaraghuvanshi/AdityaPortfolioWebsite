@@ -6,24 +6,24 @@ import { SectionTitle } from "@/components/ui/section-title"
 
 const experiences = [
   {
-    role: "Full-Stack Developer",
-    company: "Tech Startup Inc.",
-    duration: "2023 - Present",
-    location: "Remote",
+    role: "Software Developer",
+    company: "Macleods Pharmaceuticals.",
+    duration: "Jan 2024 - Dec 2025",
+    location: "Mumbai, Maharashtra",
     description:
       "Developed and maintained full-stack web applications. Led frontend architecture decisions and implemented GraphQL API integration.",
     achievements: [
-      "Built React components reducing load time by 40%",
-      "Implemented GraphQL queries optimizing data fetching",
-      "Mentored 2 junior developers",
+      "Developed and maintained full-stack web applications.",
+      "Led frontend architecture decisions and implemented GraphQL API integration.",
+      "Developed and maintained full-stack web applications.",
     ],
-    tech: ["React", "Node.js", "GraphQL", "MongoDB"],
+    tech: ["React", "React Native", "Node.js", "TypeScript", "JavaScript", "Express.js", "Tailwind CSS", "GraphQL", "MongoDB", "Firebase", "Git", "GitHub", "Linux"],
   },
   {
-    role: "Junior Developer",
-    company: "Digital Solutions Ltd.",
-    duration: "2022 - 2023",
-    location: "Hybrid",
+    role: "Software Development Engineer - 1",
+    company: "NUVR Private Limited.",
+    duration: "Jan 2026 - Present",
+    location: "Bengaluru, Karnataka",
     description:
       "Contributed to building and debugging web applications. Worked with REST APIs and MySQL databases while learning modern development practices.",
     achievements: [

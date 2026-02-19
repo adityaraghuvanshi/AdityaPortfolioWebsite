@@ -27,28 +27,6 @@ const projects = [
     },
     color: "from-purple-500/20 to-pink-500/20",
   },
-  {
-    title: "React Native Mobile App",
-    description: "Cross-platform mobile app with offline support, push notifications, and seamless UX.",
-    tech: ["React Native", "Node.js", "MongoDB", "Firebase"],
-    image: "/mobile-app-ui.png",
-    links: {
-      github: "https://github.com",
-      live: "https://example.com",
-    },
-    color: "from-green-500/20 to-emerald-500/20",
-  },
-  {
-    title: "Analytics Dashboard",
-    description: "Data visualization dashboard with real-time metrics, custom reports, and export functionality.",
-    tech: ["React", "REST API", "Charts", "TypeScript", "Tailwind"],
-    image: "/analytics-dashboard.png",
-    links: {
-      github: "https://github.com",
-      live: "https://example.com",
-    },
-    color: "from-orange-500/20 to-red-500/20",
-  },
 ]
 
 export function Projects() {

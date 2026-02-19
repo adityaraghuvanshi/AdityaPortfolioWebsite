@@ -2,27 +2,28 @@
 
 import { motion } from "framer-motion"
 import { SectionTitle } from "@/components/ui/section-title"
+import { Code, Server, Database, Cloud } from "lucide-react"
 
 const skillCategories = [
   {
-    category: "Frontend",
-    skills: ["React.js", "TypeScript", "JavaScript", "Tailwind CSS", "Next.js", "Responsive Design"],
-    icon: "🎨",
+    category: "Mobile & Frontend",
+    skills: ["React Native", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Responsive Design"],
+    icon: Code,
   },
   {
-    category: "Backend",
-    skills: ["Node.js", "Express.js", "REST API", "GraphQL", "Authentication", "Server Architecture"],
-    icon: "⚙️",
+    category: "Backend & APIs",
+    skills: ["Node.js", "Express.js", "REST API Design", "Authentication", "Redis", "RabbitMQ"],
+    icon: Server,
   },
   {
     category: "Database",
-    skills: ["MongoDB", "MySQL", "Data Modeling", "Query Optimization", "Schema Design"],
-    icon: "🗄️",
+    skills: ["PostgreSQL", "MongoDB", "SQL Optimization", "Schema Design", "Database Migrations"],
+    icon: Database,
   },
   {
-    category: "Mobile",
-    skills: ["React Native", "Cross-platform", "Mobile UI", "Performance", "Native APIs"],
-    icon: "📱",
+    category: "DevOps & Cloud",
+    skills: ["Git", "Docker", "CI/CD", "AWS", "Linux", "GitHub Actions"],
+    icon: Cloud,
   },
 ]
 
@@ -66,7 +67,7 @@ export function Skills() {
               className="group p-8 rounded-xl border border-secondary/50 hover:border-accent/50 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:bg-secondary/30"
             >
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-4xl">{category.icon}</span>
+                <category.icon className="w-8 h-8 text-accent" />
                 <h3 className="text-xl font-bold group-hover:text-accent transition-colors">{category.category}</h3>
               </div>
 
@@ -100,14 +101,14 @@ export function Skills() {
           transition={{ delay: 0.5 }}
           className="mt-16 p-8 rounded-xl border border-secondary/50 bg-background/50 backdrop-blur-sm"
         >
-          <h3 className="text-lg font-bold mb-6">Tech Stack Proficiency</h3>
+          <h3 className="text-lg font-bold mb-6">Core Strengths</h3>
           <div className="space-y-4">
             {[
-              { tech: "React & Modern JavaScript", level: 95 },
-              { tech: "Node.js & Express", level: 90 },
-              { tech: "Database Design (SQL & NoSQL)", level: 85 },
-              { tech: "Full-Stack Architecture", level: 88 },
-              { tech: "React Native & Mobile", level: 80 },
+              { tech: "React Native & Mobile Development", level: 85 },
+              { tech: "Node.js & API Development", level: 90 },
+              { tech: "TypeScript & JavaScript", level: 90 },
+              { tech: "PostgreSQL & Database Design", level: 85 },
+              { tech: "System Design & Architecture", level: 75 },
             ].map((item, index) => (
               <div key={index}>
                 <div className="flex justify-between items-center mb-2">
